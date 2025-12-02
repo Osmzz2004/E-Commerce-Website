@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>E-Commerce Website</title>
+    <style>
+        button {
+            padding: 20px 60px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background-color: blue;
+            color: white;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px; /* space between buttons */
+            margin-top: 80px;
+        }
+    </style>
+</head>
+
+<body style="font-family: Arial; text-align: center;">
+
+    <h1>E-Commerce Website</h1>
+
+    <div class="btn-container">
+        <button id="logbtn" >Login</button>
+        <button id="regbtn">Register</button>
+    </div>
+	
+    <script>
+        var logbtn = document.getElementById("logbtn");
+        var regbtn = document.getElementById("regbtn");
+
+        logbtn.addEventListener("click", function() {
+            window.location.href = "login.jsp";
+        });
+
+        regbtn.addEventListener("click", function() {
+            window.location.href = "registration.jsp";
+        });
+    </script>
+
+</body>
+</html>
+
