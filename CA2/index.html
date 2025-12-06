@@ -16,20 +16,30 @@
         .btn-container {
             display: flex;
             justify-content: center;
-            gap: 50px; /* space between buttons */
+            gap: 50px; 
             margin-top: 80px;
         }
+		
+		.container{
+			max-width: 800;
+            margin: 60px auto;
+            background: lightgray;
+            padding: 100px;
+            border-radius: 12px;
+			}
     </style>
 </head>
 
-<body style="font-family: Arial; text-align: center;">
+<body style="font-family: Arial; text-align: center">
 
+<div class="container">
     <h1>E-Commerce Website</h1>
 
     <div class="btn-container">
         <button id="logbtn" >Login</button>
         <button id="regbtn">Register</button>
     </div>
+</div>
 	
     <script>
         var logbtn = document.getElementById("logbtn");
