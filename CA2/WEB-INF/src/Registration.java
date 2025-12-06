@@ -14,34 +14,38 @@ public Registration() {
 }
 
 public String validateRegistration() {
-	ResultSet rs = null;
-	Connection connection = null;
-	try {
-		connection = DriverManager.getConnection(
-				"jdbc:mysql://localhost:3306/users","root", "root");
-		
-	    PreparedStatement select = connection.prepareStatement(
-	            "SELECT * FROM users WHERE username = ?");
-	    select.setString(1, username);
-	    rs = select.executeQuery();
-	    
-	    if (rs.next()) {
-	    	return "UserExists";
-	    }
+    ResultSet rs = null;
+    Connection connection = null;
 
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	
-    
-	if (password == null || confirmPassword == null || !password.equals(confirmPassword)) {
-		return "PasswordMismatch";
-	}else {
-		return "RegistrationSuccess";
-	}
+    if (password == null || confirmPassword == null || !password.equals(confirmPassword)) {
+        return "PasswordMismatch"; 
+    }
 
-	
+    try {
+        connection = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/accounts","root", "root");
+
+        PreparedStatement select = connection.prepareStatement(
+                "SELECT * FROM users WHERE username = ?");
+        select.setString(1, username);
+        rs = select.executeQuery();
+
+        if (rs.next()) {
+            return "UserExists";
+        } else {
+            PreparedStatement insert = connection.prepareStatement(
+                    "INSERT INTO users (username, password) VALUES (?, ?)");
+            insert.setString(1, username);
+            insert.setString(2, password);
+            int rowUpdated = insert.executeUpdate();
+            return "RegistrationSuccess";
+
+        }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+        return "RegistrationFailed";
+    }
 }
 
 public String getUsername() {
