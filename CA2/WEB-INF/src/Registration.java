@@ -5,6 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class Registration {
+private String firstName;
+private String lastName;
+private String phoneNumber;
 private String username;
 private String password;
 private String confirmPassword;
@@ -34,9 +37,12 @@ public String validateRegistration() {
             return "UserExists";
         } else {
             PreparedStatement insert = connection.prepareStatement(
-                    "INSERT INTO users (username, password) VALUES (?, ?)");
+                    "INSERT INTO users (username, password, firstName, lastName, phoneNumber) VALUES (?, ?, ?, ?, ?)");
             insert.setString(1, username);
             insert.setString(2, password);
+            insert.setString(3, firstName);
+            insert.setString(4, lastName);
+            insert.setString(5, phoneNumber);
             int rowUpdated = insert.executeUpdate();
             return "RegistrationSuccess";
 
@@ -46,6 +52,30 @@ public String validateRegistration() {
         e.printStackTrace();
         return "RegistrationFailed";
     }
+}
+
+public String getFirstName() {
+	return firstName;
+}
+
+public void setFirstName(String firstName) {
+	this.firstName = firstName;
+}
+
+public String getLastName() {
+	return lastName;
+}
+
+public void setLastName(String lastName) {
+	this.lastName = lastName;
+}
+
+public String getPhoneNumber() {
+	return phoneNumber;
+}
+
+public void setPhoneNumber(String phoneNumber) {
+	this.phoneNumber = phoneNumber;
 }
 
 public String getUsername() {

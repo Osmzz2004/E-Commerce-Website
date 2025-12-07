@@ -26,6 +26,9 @@
 	<h1> Register </h1>
 	<div class="container">
         <s:form action="register" >
+			<s:textfield name="firstName" label="First name" />
+            <s:textfield name="lastName" label="Last name " />
+			<s:textfield name="phoneNumber" label="Phone number" />
             <s:textfield name="username" label="User name " />
 			<s:password name="password" label="Password " />
 			<s:password name="confirmPassword" label="Confirm Password " />

@@ -12,5 +12,13 @@
 <result name="LoginSuccess">/dashboard.jsp</result>
 <result name="LoginFailed">/index.html</result>
 </action>
+
+<action name="logOut" class="Login" method="logOut">
+<result name="logOutSuccess">/index.html</result>
+</action>
+
+<action name="viewMyProfile" class="MyProfile" method="viewProfile">
+<result name="success">/myProfile.jsp</result>
+</action>
 </package>
 </struts>
