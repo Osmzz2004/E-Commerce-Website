@@ -5,31 +5,29 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Registration</title>
+        <title>Login</title>
 		<style>
-		#div{
-            max-width: 420px;
+		.container{
+            max-width: 400px;
             margin: 60px auto;
             background: white;
             padding: 30px;
             border-radius: 12px;
         }
 		
-		#body{
+		body{
 			text-align: center;
 			background: lightgray;
+		}
+
 	</style>
     </head>
     <body>
-	<h1> Registration </h1>
-	<div>
-        <s:form action="storeUser" >
-			Enter user name <br/>
-            <s:textfield name="username" label="userName: " />
-			Enter password <br/>
-			<s:password name="password" label="password: " />
-		     Confirm password <br/>
-			<s:password name="password" label="confirmPassword: " />
+	<h1> Login </h1>
+	<div class="container">
+        <s:form action="login" >
+            <s:textfield name="username" label="User name " />
+			<s:password name="password" label="Password " />
             <s:submit />
         </s:form>
 		</div>

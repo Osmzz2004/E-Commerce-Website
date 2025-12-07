@@ -1,8 +1,16 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
 <package name="default" extends="struts-default">
-<action name="storeUser" class="Registration" method="validateRegistration">
-<result name="RegisterSuccess">/login.jsp</result>
-<result name="PasswordMismatch">/passwordMismatch.html</result>
+<action name="register" class="Registration" method="validateRegistration">
+<result name="RegistrationSuccess">/login.jsp</result>
+<result name="PasswordMismatch">/passwordmismatch.html</result>
+</action>
+
+<action name="login" class="Login" method="validateLogin">
+<result name="LoginSuccess">/dashboard.jsp</result>
+<result name="LoginFailed">/index.html</result>
 </action>
 </package>
 </struts>
