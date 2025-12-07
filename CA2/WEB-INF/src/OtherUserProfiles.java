@@ -10,11 +10,10 @@ import java.util.Map;
 
 public class OtherUserProfiles implements SessionAware {
 
-    private String username; // the username to search
-    private User user;       // the user object to display
+    private String username; 
+    private User user;       
     private Map<String, Object> session;
 
-    // Getter and Setter for username (from form)
     public String getUsername() {
         return username;
     }
@@ -23,13 +22,10 @@ public class OtherUserProfiles implements SessionAware {
         this.username = username;
     }
 
-    // Getter for user (for JSP)
     public User getUser() {
         return user;
     }
 
-
-    // Action method
     public String viewOtherUsers() {
 
         try (Connection connection = DriverManager.getConnection(
@@ -42,7 +38,6 @@ public class OtherUserProfiles implements SessionAware {
             ResultSet rs = select.executeQuery();
 
             if (rs.next()) {
-                // Create user object using parameterized constructor
                 user = new User(
                         rs.getString("firstName"),
                         rs.getString("lastName"),
@@ -51,12 +46,12 @@ public class OtherUserProfiles implements SessionAware {
                         rs.getString("password")
                 );
 
-                // Optionally, store in session if needed
+           
                 session.put("viewedUser", user);
 
                 return "success";
             } else {
-                return "error"; // username not found
+                return "error";
             }
 
         } catch (SQLException e) {

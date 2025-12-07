@@ -56,7 +56,7 @@
          </s:form>
 		 
 <a href="searchUser.jsp">
-    <button class="btn">View other's profile</button>
+    <button>View other's profile</button>
 </a>
 
 		 

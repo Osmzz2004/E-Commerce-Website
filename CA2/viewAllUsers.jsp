@@ -16,11 +16,26 @@
         }
 		</style>
 <body style="text-align: center">
-<h1><s:property value="username "/> profile</h1>
+<h1>All users</h1>
 <div class="container">
-<p>First Name: <s:property value="user.firstName"/></p>
-<p>Last Name: <s:property value="user.lastName"/></p>
-<p>Phone Number: <s:property value="user.phoneNumber"/></p>
+    <table border="1" cellpadding="5" cellspacing="0" style="margin: 0 auto;">
+        <tr>
+            <th>User Name</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone Number</th>
+        </tr>
+        <s:iterator value="users">
+            <tr>
+                <td><s:property value="username"/></td>
+                <td><s:property value="firstName"/></td>
+                <td><s:property value="lastName"/></td>
+                <td><s:property value="phoneNumber"/></td>
+            </tr>
+        </s:iterator>
+    </table>
+
+    <br/>
 <a href="dashboard.jsp">
     <button class="btn">Go back to dashboard</button>
 </a>

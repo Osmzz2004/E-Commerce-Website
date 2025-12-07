@@ -16,8 +16,8 @@
         }
 		</style>
 <body style="text-align: center">
-<div class="container">
 <h1>My Profile</h1>
+<div class="container">
 <h3>
 	First name: <s:property value ="#session.currentUser.firstName" />
 	<br/>

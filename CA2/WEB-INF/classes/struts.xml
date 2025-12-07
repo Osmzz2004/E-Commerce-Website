@@ -26,5 +26,11 @@
 <result name="error">/noUsers.jsp</result>
 </action>
 
+<action name="viewAllUsers" class="ViewAllUsers" method="allUsers">
+<result name="success">/viewAllUsers.jsp</result>
+<result name="error">/noUsres.jsp</result>
+</action>
+
+
 </package>
 </struts>
