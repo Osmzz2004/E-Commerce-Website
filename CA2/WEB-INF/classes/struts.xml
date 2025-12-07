@@ -20,5 +20,11 @@
 <action name="viewMyProfile" class="MyProfile" method="viewProfile">
 <result name="success">/myProfile.jsp</result>
 </action>
+
+<action name="viewOtherProfiles" class="OtherUserProfiles" method="viewOtherUsers">
+<result name="success">/othersProfile.jsp</result>
+<result name="error">/noUsers.jsp</result>
+</action>
+
 </package>
 </struts>

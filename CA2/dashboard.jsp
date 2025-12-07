@@ -55,9 +55,10 @@
         <s:submit value="View my profile" />
          </s:form>
 		 
-		 <s:form action="viewOthersProfile">
-        <s:submit value="View other's profile" />
-         </s:form>
+<a href="searchUser.jsp">
+    <button class="btn">View other's profile</button>
+</a>
+
 		 
 		 <s:form action="viewAllUsers">
         <s:submit value="View all users" />
