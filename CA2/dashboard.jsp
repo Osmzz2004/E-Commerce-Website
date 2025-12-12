@@ -58,23 +58,15 @@
 <a href="searchUser.jsp">
     <button>View other's profile</button>
 </a>
-
+<a href="addItem.jsp">
+    <button>Add item for sale</button>
+</a>
 		 
 		 <s:form action="viewAllUsers">
         <s:submit value="View all users" />
          </s:form>
 		 
-		 <s:form action="addItemForSale">
-        <s:submit value="Add item for sale" />
-         </s:form>
-		 
-		 <s:form action="viewAllItemForSale">
-        <s:submit value="View all items for sale" />
-         </s:form>
-		 
-		 <s:form action="makeABid">
-        <s:submit value="Make a bid" />
-         </s:form>
+	
 </div>
     </body>
 </html>

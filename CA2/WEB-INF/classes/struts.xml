@@ -28,9 +28,13 @@
 
 <action name="viewAllUsers" class="ViewAllUsers" method="allUsers">
 <result name="success">/viewAllUsers.jsp</result>
-<result name="error">/noUsres.jsp</result>
+<result name="error">/noUsers.jsp</result>
 </action>
 
+<action name="addItem" class="AddItem" method="addItemForSale">
+<result name="success">/itemsAdded.jsp</result>
+<result name="failure">/itemsNotAdded.jsp</result>
+</action>
 
 </package>
 </struts>
