@@ -5,6 +5,10 @@ private String category;
 private String description;
 private double bidAmount;
 
+public Bid() {
+
+}
+
 public Bid(int itemId, String category, String description, double bidAmount, String bidder) {
 	this.itemId = itemId;
 	this.category = category;

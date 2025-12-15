@@ -57,7 +57,16 @@
 		 
 			 <s:form action="viewAllItems">
         <s:submit value="View all items for sale" />
-         </s:form>	 
+         </s:form>
+		 
+			 <s:form action="viewBids">
+        <s:submit value="View all bids" />
+         </s:form>
+		 </a>
+	<a href="searchItem.jsp">
+    <button>View all bids on an item </button>
+</a>	
+
 	
 </div>
     </body>

@@ -46,5 +46,15 @@
 <result name="success">/bidPlaced.jsp</result>
 <result name="failure">/itemDoesNotExist.jsp</result>
 </action>
+
+<action name="viewBids" class="ViewAllBids" method="viewAllBids">
+<result name="success">/viewAllBids.jsp</result>
+<result name="failure">/noBids.jsp</result>
+</action>
+
+<action name="viewAllBidsOnItem" class="ViewAllBidsOnItem" method="viewBidsOnItem">
+<result name="success">/viewAllBidsOnItem.jsp</result>
+<result name="failure">/noBids.jsp</result>
+</action>
 </package>
 </struts>

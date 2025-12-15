@@ -19,6 +19,7 @@ public class MakeABid implements SessionAware{
 	public String placeBidOnItem() {
 		User currentUser = (User) session.get("currentUser");
 		String bidder = currentUser.getUsername();
+		Double price = Double.parseDouble(currentPrice.trim());
 		Double bid_Amount = Double.parseDouble(bidAmount.trim());
 		
         try (Connection connection = DriverManager.getConnection(
@@ -28,7 +29,7 @@ public class MakeABid implements SessionAware{
                     "SELECT * FROM items WHERE category = ? AND description = ? AND price = ?");
             select.setString(1, category);
             select.setString(2, description);
-            select.setString(3, currentPrice);
+            select.setDouble(3, price);
 
             ResultSet rs = select.executeQuery();
 
