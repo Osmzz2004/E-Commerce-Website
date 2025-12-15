@@ -4,8 +4,7 @@
 <%@taglib uri="/struts-tags" prefix="s" %>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Registration</title>
+        <title>Make a bid</title>
 		<style>
 		.container{
             max-width: 400px;
@@ -23,13 +22,14 @@
 	</style>
     </head>
     <body>
-	<h1> Add item for sale </h1>
+	<h1> Place a bid on an item </h1>
 	<div class="container">
-        <s:form action="addItem" >
+        <s:form action="placeBid" >
 			<s:textfield name="category" label="Item category" />
             <s:textfield name="description" label="Item description " />
-			<s:textfield name="price" label="Item price" />
-            <s:submit />
+			<s:textfield name="currentPrice" label="Current item price" />
+			<s:textfield name="bidAmount" label="Bid amount" />
+            <s:submit value="Place Bid" />
         </s:form>
 		</div>
     </body>

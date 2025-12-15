@@ -3,31 +3,33 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;;
+import java.util.ArrayList;
 
 public class ViewAllUsers {
-	ArrayList<User> users = new ArrayList<>();
-private User user;
+    private ArrayList<User> users = new ArrayList<>();
+    private User user;
+
     public ViewAllUsers() {
-    	
     }
+
     public User getUser() {
         return user;
     }
-    
+
     public ArrayList<User> getUsers() {
         return users;
     }
 
-    
-
     public String allUsers() {
+        Connection connection = null;
+        ResultSet rs = null;
 
-        try (Connection connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/accounts", "root", "root")) {
+        try {
+            connection = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/accounts", "root", "root");
 
             PreparedStatement select = connection.prepareStatement("SELECT * FROM users");
-            ResultSet rs = select.executeQuery();
+            rs = select.executeQuery();
 
             while (rs.next()) {
                 User user = new User(
@@ -40,11 +42,16 @@ private User user;
                 users.add(user);
             }
 
-            return "success";
+            if (users.isEmpty()) {
+                return "error"; 
+            } else {
+                return "success";
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();
             return "error";
+        
         }
     }
 }

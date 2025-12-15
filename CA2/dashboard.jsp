@@ -1,5 +1,3 @@
-
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
@@ -25,17 +23,6 @@
             border-radius: 5px;
         }
 		
-		
-		     .btn{
-			margin: 10px;
-            padding: 8px 30px;
-            font-size: 12px;
-            cursor: pointer;
-            border: none;
-            border-radius: 8px;
-            background-color: blue;
-            color: white;
-        }
 
 		</style>
     </head>
@@ -61,11 +48,16 @@
 <a href="addItem.jsp">
     <button>Add item for sale</button>
 </a>
-		 
+	<a href="placeABid.jsp">
+    <button>Place a bid </button>
+</a>	 
 		 <s:form action="viewAllUsers">
         <s:submit value="View all users" />
          </s:form>
 		 
+			 <s:form action="viewAllItems">
+        <s:submit value="View all items for sale" />
+         </s:form>	 
 	
 </div>
     </body>

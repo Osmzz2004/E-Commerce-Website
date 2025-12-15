@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Items Added Successfully</title>
+        <title>Incorrect Username or Password!</title>
 		<style>
 		
 		body{
@@ -16,9 +16,9 @@
 	</style>
     </head>
     <body>
-	<h1> Item Added Successfully! </h1>
-<a href="dashboard.jsp">
-    <button>Go back to dashboard</button>
+	<h1> Incorrect Username or Password! </h1>
+<a href="index.html">
+    <button>Go back to home page</button>
 </a>
     </body>
 </html>

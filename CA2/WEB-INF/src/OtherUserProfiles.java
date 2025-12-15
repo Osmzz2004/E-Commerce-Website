@@ -4,15 +4,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.apache.struts2.interceptor.SessionAware;
-
-import java.util.Map;
-
-public class OtherUserProfiles implements SessionAware {
+public class OtherUserProfiles {
 
     private String username; 
     private User user;       
-    private Map<String, Object> session;
 
     public String getUsername() {
         return username;
@@ -46,9 +41,7 @@ public class OtherUserProfiles implements SessionAware {
                         rs.getString("password")
                 );
 
-           
-                session.put("viewedUser", user);
-
+               
                 return "success";
             } else {
                 return "error";
@@ -59,8 +52,5 @@ public class OtherUserProfiles implements SessionAware {
             return "error";
         }
     }
-    
-    public void setSession(Map map) {
-    	session = map;
-    	}
 }
+

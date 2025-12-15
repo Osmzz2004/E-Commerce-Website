@@ -27,6 +27,9 @@
 	<br/>
 	Phone number: <s:property value ="#session.currentUser.phoneNumber" />
 	</h3>
+	<a href="dashboard.jsp">
+    <button>Go back to dashboard</button>
+</a>
 	</div>
 </body>
 </html>

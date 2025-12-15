@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Items Added Successfully</title>
+        <title>Bid placed successfully!</title>
 		<style>
 		
 		body{
@@ -16,7 +16,7 @@
 	</style>
     </head>
     <body>
-	<h1> Item Added Successfully! </h1>
+	<h1> Bid placed successfully! </h1>
 <a href="dashboard.jsp">
     <button>Go back to dashboard</button>
 </a>

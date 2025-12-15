@@ -18,21 +18,12 @@ ArrayList<Item> items = new ArrayList<>();
 	}
 	
 	public String addItemForSale() {
-	    if (session == null || session.get("currentUser") == null) {
-	        return "login"; // redirect to login
-	    }
 
-	    User user = (User) session.get("currentUser"); // safe now
+	    User user = (User) session.get("currentUser"); 
 	    String username = user.getUsername();
-
-
-
         double itemPrice;
-        try {
             itemPrice = Double.parseDouble(price.trim());
-        } catch (NumberFormatException e) {
-            return "failure"; // invalid number entered
-        }
+
 	    Connection connection = null;
 	   
 
@@ -47,13 +38,13 @@ ArrayList<Item> items = new ArrayList<>();
 	        insert.setDouble(3, itemPrice);
 	        insert.setString(4, username);
 	        int rowUpdated = insert.executeUpdate();
-	        /*
+	        
 	        Item item = new Item();
 	        item.setCategory(category);
 	        item.setDescription(description);
 	        item.setPrice(itemPrice);
 	        item.setSeller(username);
-*/
+
 	    } catch (SQLException e) {
 	        e.printStackTrace();
 	        return "failure";

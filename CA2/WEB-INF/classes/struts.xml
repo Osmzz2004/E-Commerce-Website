@@ -5,16 +5,17 @@
 <package name="default" extends="struts-default">
 <action name="register" class="Registration" method="validateRegistration">
 <result name="RegistrationSuccess">/login.jsp</result>
-<result name="PasswordMismatch">/passwordmismatch.html</result>
+<result name="UserExists">/userExists.jsp</result>
+<result name="PasswordMismatch">/passwordMismatch.jsp</result>
 </action>
 
 <action name="login" class="Login" method="validateLogin">
 <result name="LoginSuccess">/dashboard.jsp</result>
-<result name="LoginFailed">/index.html</result>
+<result name="LoginFailed">/incorrectLogin.jsp</result>
 </action>
 
 <action name="logOut" class="Login" method="logOut">
-<result name="logOutSuccess">/index.html</result>
+<result name="logOutSuccess">/index.jsp</result>
 </action>
 
 <action name="viewMyProfile" class="MyProfile" method="viewProfile">
@@ -36,5 +37,14 @@
 <result name="failure">/itemsNotAdded.jsp</result>
 </action>
 
+<action name="viewAllItems" class="ViewAllItems" method="viewAllItemsForSale">
+<result name="success">/viewAllItems.jsp</result>
+<result name="failure">/noItems.jsp</result>
+</action>
+
+<action name="placeBid" class="MakeABid" method="placeBidOnItem">
+<result name="success">/bidPlaced.jsp</result>
+<result name="failure">/itemDoesNotExist.jsp</result>
+</action>
 </package>
 </struts>
